@@ -2,7 +2,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import "../styles/ProjectSwiper.scss";
+import "../styles/projectSwiper.scss";
 
 import { Autoplay } from 'swiper/modules';
 
