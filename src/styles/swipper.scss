@@ -1,0 +1,27 @@
+
+.slide-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+}
+
+.slide-logo {
+  max-width: 80px;
+  max-height: 80px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.slide-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  

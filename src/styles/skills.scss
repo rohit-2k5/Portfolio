@@ -1,0 +1,306 @@
+.skills {
+  border-radius: 3rem;
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  display: flex;
+  align-items: center;
+  padding: 4rem 0;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 20%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(118, 75, 162, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .skillsContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+
+    .skillsHeader {
+      margin-top: 3rem;
+      text-align: center;
+      margin-bottom: 2rem;
+
+      .skillsTitle {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 1rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: 2px;
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -15px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 80px;
+          height: 4px;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          border-radius: 2px;
+        }
+      }
+
+      .skillsSubtitle {
+        font-size: 1.2rem;
+        color: #a0a0a0;
+        font-weight: 400;
+        letter-spacing: 1px;
+        margin: 0;
+        margin-top: 2rem;
+      }
+
+      .titleUnderline {
+        width: 100px;
+        height: 2px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        margin: 1rem auto 0;
+        border-radius: 1px;
+      }
+    }
+
+    .skillsCarousel {
+      margin-bottom: 0.5rem;
+
+      .swiper {
+        width: 100%;
+        padding: 2rem 0;
+
+        .swiper-slide {
+          background-position: center;
+          background-size: cover;
+          width: 280px;
+          height: 280px;
+          padding: 1.5rem;
+
+          div {
+            border-radius: 20px;
+            height: 100%;
+            width: 100%;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+
+            &::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+              opacity: 0;
+              transition: opacity 0.3s ease;
+            }
+
+            img {
+              border-radius: 15px;
+              height: 60%;
+              width: 60%;
+              object-fit: contain;
+              transition: all 0.3s ease;
+              z-index: 2;
+              position: relative;
+              filter: brightness(1.1) contrast(1.1);
+            }
+            
+            p {
+              color: #e0e0e0;
+              margin-top: 1.5rem;
+              width: 80%;
+              font-size: 1.1rem;
+              text-align: center;
+              font-weight: 500;
+              letter-spacing: 0.5px;
+              z-index: 2;
+              position: relative;
+              transition: all 0.3s ease;
+            }
+
+            &:hover {
+              transform: translateY(-10px) scale(1);
+              box-shadow: 0 25px 50px rgba(102, 126, 234, 0.3);
+              border-color: rgba(102, 126, 234, 0.3);
+
+              &::before {
+                opacity: 1;
+              }
+
+              img {
+                transform: scale(1.05);
+                filter: brightness(1.2) contrast(1.2);
+              }
+
+              p {
+                color: #ffffff;
+                transform: translateY(-2px);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .scrollIndicator {
+      display: flex;
+      justify-content: center;
+
+      .scrollBtn {
+        background: rgba(255, 255, 255, 0.1);
+        border: 2px solid rgba(102, 126, 234, 0.3);
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+
+        &:hover {
+          background: rgba(102, 126, 234, 0.2);
+          border-color: #667eea;
+          transform: translateY(-5px);
+          box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .scrollIcon {
+          color: #ffffff;
+          font-size: 1.8rem;
+          animation: bounce 2s infinite;
+        }
+      }
+    }
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
+}
+
+// Responsive Design
+@media (max-width: 800px) {
+  .skills {
+    padding: 2rem 0;
+    border-radius: 0rem;
+
+    .skillsContainer {
+      padding: 0 1rem;
+
+      .skillsHeader {
+        margin-bottom: 2rem;
+
+        .skillsTitle {
+          font-size: 2.2rem;
+        }
+
+        .skillsSubtitle {
+          font-size: 1rem;
+        }
+      }
+
+      .skillsCarousel {
+        .swiper {
+          .swiper-slide {
+            width: 270px;
+            height: 220px;
+            padding: 0.5rem;
+
+            div {
+              img {
+                height: 50%;
+                width: 50%;
+              }
+
+              p {
+                font-size: 1rem;
+                margin-top: 1rem;
+              }
+            }
+          }
+        }
+      }
+
+      .scrollIndicator {
+        .scrollBtn {
+          width: 50px;
+          height: 50px;
+
+          .scrollIcon {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .skills {
+    .skillsContainer {
+      .skillsHeader {
+        .skillsTitle {
+          font-size: 1.8rem;
+        }
+
+        .skillsSubtitle {
+          font-size: 0.9rem;
+        }
+      }
+
+      .skillsCarousel {
+        .swiper {
+          .swiper-slide {
+            width: 180px;
+            height: 180px;
+
+            div {
+              img {
+                height: 45%;
+                width: 45%;
+              }
+
+              p {
+                font-size: 0.9rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
